@@ -1,0 +1,79 @@
+{
+  "kind": "collectionType",
+  "collectionName": "team_members",
+  "info": {
+    "singularName": "team-member",
+    "pluralName": "team-members",
+    "displayName": "Team Member",
+    "description": "Abogados y miembros del equipo"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginsOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "role": {
+      "type": "string"
+    },
+    "bio": {
+      "type": "richtext"
+    },
+    "photo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "order": {
+      "type": "integer",
+      "default": 0
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name",
+      "required": true
+    },
+    "experience": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": ["socio", "asociado", "asociada", "consultor"],
+      "default": "asociado"
+    },
+    "education": {
+      "type": "json"
+    },
+    "highlights": {
+      "type": "json"
+    },
+    "practiceAreas": {
+      "type": "json"
+    },
+    "industries": {
+      "type": "json"
+    },
+    "languages": {
+      "type": "json"
+    },
+    "achievements": {
+      "type": "json"
+    },
+    "blog_posts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::blog-post.blog-post",
+      "mappedBy": "author"
+    }
+  }
+}
