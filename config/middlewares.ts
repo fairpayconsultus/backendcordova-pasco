@@ -1,6 +1,6 @@
 import type { Core } from '@strapi/strapi';
 
-const config: Core.Config.Middlewares = [
+export default ({ env }: Core.Config.Shared.ConfigParams): Core.Config.Middlewares => [
   'strapi::logger',
   'strapi::errors',
   'strapi::security',
@@ -9,7 +9,12 @@ const config: Core.Config.Middlewares = [
     config: {
       enabled: true,
       headers: '*',
-      origin: ['http://localhost:5173', 'http://localhost:4173'],
+      origin: [
+        'http://localhost:5173',
+        'http://localhost:4173',
+        'https://landingcordova-pasco.vercel.app',
+        env('FRONTEND_URL', 'http://localhost:5173'),
+      ],
     },
   },
   'strapi::poweredBy',
@@ -19,5 +24,3 @@ const config: Core.Config.Middlewares = [
   'strapi::favicon',
   'strapi::public',
 ];
-
-export default config;
