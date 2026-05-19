@@ -48,7 +48,7 @@
     },
     "category": {
       "type": "enumeration",
-      "enum": ["socio", "asociado", "asociada", "consultor"],
+      "enum": ["socio", "asociado", "consultor"],
       "default": "asociado"
     },
     "education": {

@@ -611,9 +611,7 @@ export interface ApiTeamMemberTeamMember extends Struct.CollectionTypeSchema {
       'oneToMany',
       'api::blog-post.blog-post'
     >;
-    category: Schema.Attribute.Enumeration<
-      ['socio', 'asociado', 'asociada', 'consultor']
-    > &
+    category: Schema.Attribute.Enumeration<['socio', 'asociado', 'consultor']> &
       Schema.Attribute.DefaultTo<'asociado'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
