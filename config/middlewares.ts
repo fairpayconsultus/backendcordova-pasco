@@ -13,6 +13,7 @@ export default ({ env }: Core.Config.Shared.ConfigParams): Core.Config.Middlewar
         'http://localhost:5173',
         'http://localhost:4173',
         'https://landingcordova-pasco.vercel.app',
+        'https://www.cp-asociados.pe',
         env('FRONTEND_URL', 'http://localhost:5173'),
       ],
     },
