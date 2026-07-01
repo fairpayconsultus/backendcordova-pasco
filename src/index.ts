@@ -14,7 +14,7 @@ export default {
    * your application gets started.
    *
    * This gives you an opportunity to set up your data model,
-   * run jobs, or perform some special logic.
+   * run jobs, or perform some special logic
    */
   async bootstrap({ strapi }) {
     // Seed sectors on startup
